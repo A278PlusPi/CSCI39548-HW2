@@ -9,51 +9,55 @@ In this Assignment, we use the prototype constructor to add new methods to the A
 ----------------------------------------------------------*/
 
 // MAP //
-Array.prototype.myMap = function(callbackFn) {
-  // Place your code here.
+Array.prototype.myMap = function (array, transform) {
+  let mapped = [];
+  for (let e of array) {
+    mapped.push(transform(e));
+  }
+  return mapped;
 };
 
 // FILTER //
-Array.prototype.myFilter = function(callbackFn) {
+Array.prototype.myFilter = function (callbackFn) {
   // Place your code here.
 };
 
 // SOME //
-Array.prototype.mySome = function(callbackFn) {
+Array.prototype.mySome = function (callbackFn) {
   // Place your code here.
 };
 
 // EVERY //
-Array.prototype.myEvery = function(callbackFn) {
+Array.prototype.myEvery = function (callbackFn) {
   // Place your code here.
 };
 
 // REDUCE //
-Array.prototype.myReduce = function(callbackFn) {
+Array.prototype.myReduce = function (callbackFn) {
   // Place your code here.
 };
 
 // INCLUDES //
-Array.prototype.myIncludes = function(searchElement) {
+Array.prototype.myIncludes = function (searchElement) {
   // Place your code here.
 };
 
 // INDEXOF //
-Array.prototype.myIndexOf = function(searchElement) {
+Array.prototype.myIndexOf = function (searchElement) {
   // Place your code here.
 };
 
 // LASTINDEXOF //
-Array.prototype.myLastIndexOf = function(searchElement) {
+Array.prototype.myLastIndexOf = function (searchElement) {
   // Place your code here.
 };
 
 // KEYS //
-Object.myKeys = function(object) {
+Object.myKeys = function (object) {
   // Place your code here.
 };
 
 // VALUES //
-Object.myValues = function(object) {
+Object.myValues = function (object) {
   // Place your code here.
 };
