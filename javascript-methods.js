@@ -18,8 +18,15 @@ Array.prototype.myMap = function (array, transform) {
 };
 
 // FILTER //
-Array.prototype.myFilter = function (callbackFn) {
-  // Place your code here.
+
+Array.prototype.myFilter = function (array, check) {
+  let mapped = [];
+  for (let e of array) {
+    if (check(e)) {
+      mapped.push(e);
+    }
+  }
+  return mapped;
 };
 
 // SOME //
