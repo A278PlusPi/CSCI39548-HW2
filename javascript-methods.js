@@ -30,8 +30,11 @@ Array.prototype.myFilter = function (array, check) {
 };
 
 // SOME //
-Array.prototype.mySome = function (callbackFn) {
-  // Place your code here.
+Array.prototype.mySome = function (array, checkSome) {
+  for (let e of array) {
+    if (checkSome(e)) return true;
+  }
+  return false;
 };
 
 // EVERY //
