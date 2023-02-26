@@ -54,7 +54,7 @@ Array.prototype.myReduce = function (callbackFn) {
     }
   }
 
-  for (i = index; i < this.length; i++){
+  for (i = index+1; i < this.length; i++){
     initial_val = callbackFn(initial_val, this[i], i, this);
   }
 
