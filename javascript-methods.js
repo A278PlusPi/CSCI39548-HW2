@@ -64,7 +64,13 @@ Array.prototype.myLastIndexOf = function (searchElement) {
 
 // KEYS //
 Object.myKeys = function (object) {
-  // Place your code here.
+  let keys=[]; 
+  let i=0;
+  for(let key in object){
+    keys[i] = key; 
+    i++; 
+  }
+  return keys; 
 };
 
 // VALUES //
