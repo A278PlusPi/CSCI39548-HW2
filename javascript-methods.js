@@ -71,17 +71,33 @@ Array.prototype.myReduce = function (callbackFn) {
 };
 
 // INCLUDES //
-Array.prototype.myIncludes = function (searchElement) {
-  // Place your code here.
-};
+Array.prototype.myIncludes = function (value, index) {
+    
+  if (index == undefined || index == NaN) {
+      index = 0;
+  }
+  
+  if (index < 0) {
+      index += this.length;
+  }
+  
+    for (let i = index; i < this.length; i++) {
+      if (this[i] == value) {
+        return true;
+        break;
+      }
+    }
+  
+    return false;
+  };
 
 // INDEXOF //
-Array.prototype.myIndexOf = function (searchElement) {
+Array.prototype.myIndexOf = function (value, index) {
   // Place your code here.
 };
 
 // LASTINDEXOF //
-Array.prototype.myLastIndexOf = function (searchElement) {
+Array.prototype.myLastIndexOf = function (value, index) {
   // Place your code here.
 };
 
