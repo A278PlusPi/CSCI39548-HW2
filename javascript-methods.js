@@ -53,7 +53,21 @@ Array.prototype.myEvery = function (callbackFn) {
 
 // REDUCE //
 Array.prototype.myReduce = function (callbackFn) {
-  // Place your code here.
+  let initial_val = 0;
+  let index = 0;
+  for (i = 0; i < this.length; i++){
+    if (this[i] !== undefined){
+      initial_val = this[i];
+      index = i;
+      break;
+    }
+  }
+
+  for (i = index+1; i < this.length; i++){
+    initial_val = callbackFn(initial_val, this[i], i, this);
+  }
+
+  return initial_val;
 };
 
 // INCLUDES //
