@@ -39,7 +39,16 @@ Array.prototype.mySome = function (array, checkSome) {
 
 // EVERY //
 Array.prototype.myEvery = function (callbackFn) {
-  // Place your code here.
+  for (let i = 0; i < this.length; i++){
+    if (this[i] == undefined){
+      continue; //go to next iteratation if value is undefined
+    }
+    if (callbackFn(this[i], i, this) === false){
+      return false; 
+      //function should immediately end and return false
+    }
+  }
+  return true; //if no problem after loop, then return true
 };
 
 // REDUCE //
