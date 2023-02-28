@@ -75,5 +75,11 @@ Object.myKeys = function (object) {
 
 // VALUES //
 Object.myValues = function (object) {
-  // Place your code here.
+  let values=[]; 
+  let i=0; 
+  for(let value in object){
+    values[i] = object[value]; 
+  }
+  return values; 
+  
 };
