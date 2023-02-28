@@ -107,7 +107,21 @@ Array.prototype.myIndexOf = function (value, index) {
 
 // LASTINDEXOF //
 Array.prototype.myLastIndexOf = function (value, index) {
-  // Place your code here.
+  if (index == undefined || index == NaN) {
+    index = this.length;
+}
+
+  if (index < 0) {
+    index += this.length;
+  }
+
+  for (let i = index; i >= 0; i--) {
+    if (this[i] == value) {
+      return i;
+    }
+  }
+
+  return -1;
 };
 
 // KEYS //
