@@ -84,7 +84,6 @@ Array.prototype.myIncludes = function (value, index) {
     for (let i = index; i < this.length; i++) {
       if (this[i] == value) {
         return true;
-        break;
       }
     }
   
@@ -93,7 +92,17 @@ Array.prototype.myIncludes = function (value, index) {
 
 // INDEXOF //
 Array.prototype.myIndexOf = function (value, index) {
-  // Place your code here.
+  if (index == undefined || index == NaN) {
+    index = 0;
+}
+
+  for (let i = index; i < this.length; i++) {
+    if (this[i] == value) {
+      return i;
+    }
+  }
+
+  return -1;
 };
 
 // LASTINDEXOF //
