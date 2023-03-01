@@ -39,91 +39,30 @@ Array.prototype.mySome = function (array, checkSome) {
 
 // EVERY //
 Array.prototype.myEvery = function (callbackFn) {
-  for (let i = 0; i < this.length; i++){
-    if (this[i] == undefined){
-      continue; //go to next iteratation if value is undefined
-    }
-    if (callbackFn(this[i], i, this) === false){
-      return false; 
-      //function should immediately end and return false
-    }
-  }
-  return true; //if no problem after loop, then return true
+  // Place your code here.
 };
 
 // REDUCE //
 Array.prototype.myReduce = function (callbackFn) {
-  let initial_val = 0;
-  let index = 0;
-  for (i = 0; i < this.length; i++){
-    if (this[i] !== undefined){
-      initial_val = this[i];
-      index = i;
-      break;
-    }
-  }
-
-  for (i = index+1; i < this.length; i++){
-    initial_val = callbackFn(initial_val, this[i], i, this);
-  }
-
-  return initial_val;
+  // Place your code here.
 };
 
 // INCLUDES //
-Array.prototype.myIncludes = function (value, index) {
-    
-  if (index == undefined || index == NaN) {
-      index = 0;
-  }
-  
-  if (index < 0) {
-      index += this.length;
-  }
-  
-    for (let i = index; i < this.length; i++) {
-      if (this[i] == value) {
-        return true;
-      }
-    }
-  
-    return false;
-  };
+Array.prototype.myIncludes = function (searchElement) {
+  // Place your code here.
+};
 
 // INDEXOF //
-Array.prototype.myIndexOf = function (value, index) {
-  if (index == undefined || index == NaN) {
-    index = 0;
-}
-
-  for (let i = index; i < this.length; i++) {
-    if (this[i] == value) {
-      return i;
-    }
-  }
-
-  return -1;
+Array.prototype.myIndexOf = function (searchElement) {
+  // Place your code here.
 };
 
 // LASTINDEXOF //
-Array.prototype.myLastIndexOf = function (value, index) {
-  if (index == undefined || index == NaN) {
-    index = this.length;
-}
-
-  if (index < 0) {
-    index += this.length;
-  }
-
-  for (let i = index; i >= 0; i--) {
-    if (this[i] == value) {
-      return i;
-    }
-  }
-
-  return -1;
+Array.prototype.myLastIndexOf = function (searchElement) {
+  // Place your code here.
 };
 
+//Function myKeys and myValues done by Kasaf Shah
 // KEYS //
 Object.myKeys = function (object) {
   let keys=[]; 
@@ -141,6 +80,7 @@ Object.myValues = function (object) {
   let i=0; 
   for(let value in object){
     values[i] = object[value]; 
+    i++; 
   }
   return values; 
   
