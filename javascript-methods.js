@@ -124,8 +124,20 @@ Array.prototype.myLastIndexOf = function (value, index) {
   }
 
   return -1;
-};
 
+  if (index < 0) {
+    index += this.length;
+  }
+
+  for (let i = index; i >= 0; i--) {
+    if (this[i] == value) {
+      return i;
+    }
+  }
+
+  return -1;
+};
+//the following section implemented by Kasaf Shah
 // KEYS //
 Object.myKeys = function (object) {
   let keys=[]; 
@@ -143,6 +155,7 @@ Object.myValues = function (object) {
   let i=0; 
   for(let value in object){
     values[i] = object[value]; 
+    i++; 
   }
   return values; 
   
