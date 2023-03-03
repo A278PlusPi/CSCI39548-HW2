@@ -9,21 +9,15 @@ In this Assignment, we use the prototype constructor to add new methods to the A
 ----------------------------------------------------------*/
 
 // MAP //
-Array.prototype.myMap = function (array, transform) {
-  let mapped = [];
-  for (let e of array) {
-    mapped.push(transform(e));
-  }
-  return mapped;
-};
+Array.prototype.myMap = function (callbackFn) {};
 
 // FILTER //
 
-Array.prototype.myFilter = function (array, check) {
+Array.prototype.myFilter = function (callbackFn) {
   let mapped = [];
-  for (let e of array) {
-    if (check(e)) {
-      mapped.push(e);
+  for (let i = 0; i < this.length; i++) {
+    if (callbackFn(this[i], i, this)) {
+      mapped.push(this[i]);
     }
   }
   return mapped;
