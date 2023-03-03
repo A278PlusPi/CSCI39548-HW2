@@ -19,11 +19,11 @@ Array.prototype.myMap = function (callbackFn) {
 };
 
 // FILTER //
-
 Array.prototype.myFilter = function (callbackFn) {
   let mapped = [];
   for (let i = 0; i < this.length; i++) {
     if (callbackFn(this[i], i, this)) {
+      mapped.push(e);
       mapped.push(this[i]);
     }
   }
@@ -31,9 +31,11 @@ Array.prototype.myFilter = function (callbackFn) {
 };
 
 // SOME //
-Array.prototype.mySome = function (array, checkSome) {
-  for (let e of array) {
-    if (checkSome(e)) return true;
+Array.prototype.mySome = function (callbackFn) {
+  for (let i = 0; i < this.length; i++) {
+    if (callbackFn(this[i], i, this)) {
+      return true;
+    }
   }
   return false;
 };
