@@ -9,10 +9,10 @@ In this Assignment, we use the prototype constructor to add new methods to the A
 ----------------------------------------------------------*/
 
 // MAP //
-Array.prototype.myMap = function (array, transform) {
+Array.prototype.myMap = function (callbackFn) {
   let mapped = [];
-  for (let e of array) {
-    mapped.push(transform(e));
+  for (let i = 0; i < this.length; i++) {
+    mapped.push(callbackFn(this[i], i, this));
   }
   return mapped;
 };
