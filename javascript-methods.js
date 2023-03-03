@@ -9,59 +9,123 @@ In this Assignment, we use the prototype constructor to add new methods to the A
 ----------------------------------------------------------*/
 
 // MAP //
-Array.prototype.myMap = function (array, transform) {
+Array.prototype.myMap = function (callbackFn) {
   let mapped = [];
-  for (let e of array) {
-    mapped.push(transform(e));
+  for (let i = 0; i < this.length; i++) {
+    mapped.push(callbackFn(this[i], i, this));
   }
   return mapped;
 };
 
 // FILTER //
-
-Array.prototype.myFilter = function (array, check) {
+Array.prototype.myFilter = function (callbackFn) {
   let mapped = [];
-  for (let e of array) {
-    if (check(e)) {
+  for (let i = 0; i < this.length; i++) {
+    if (callbackFn(this[i], i, this)) {
       mapped.push(e);
+      mapped.push(this[i]);
     }
   }
   return mapped;
 };
 
 // SOME //
-Array.prototype.mySome = function (array, checkSome) {
-  for (let e of array) {
-    if (checkSome(e)) return true;
+Array.prototype.mySome = function (callbackFn) {
+  for (let i = 0; i < this.length; i++) {
+    if (callbackFn(this[i], i, this)) {
+      return true;
+    }
   }
   return false;
 };
 
 // EVERY //
 Array.prototype.myEvery = function (callbackFn) {
-  // Place your code here.
+  for (let i = 0; i < this.length; i++){
+    if (this[i] === undefined){
+      continue; //go to next iteratation if value is undefined
+    }
+    if (callbackFn(this[i], i, this) === false){
+      return false; 
+      //function should immediately end and return false
+    }
+  }
+  return true; //if no problem after loop, then return true
 };
 
 // REDUCE //
 Array.prototype.myReduce = function (callbackFn) {
-  // Place your code here.
+  let initial_val = 0;
+  let index = 0;
+  for (i = 0; i < this.length; i++){
+    if (this[i] !== undefined){
+      initial_val = this[i];
+      index = i;
+      break;
+    }
+  }
+
+  for (i = index+1; i < this.length; i++){
+    initial_val = callbackFn(initial_val, this[i], i, this);
+  }
+
+  return initial_val;
 };
 
 // INCLUDES //
-Array.prototype.myIncludes = function (searchElement) {
-  // Place your code here.
-};
+Array.prototype.myIncludes = function (value, index) {
+    
+  if (index == undefined || index == NaN) {
+      index = 0;
+  }
+  
+  if (index < 0) {
+      index += this.length;
+  }
+  
+    for (let i = index; i < this.length; i++) {
+      if (this[i] == value) {
+        return true;
+      }
+    }
+  
+    return false;
+  };
 
 // INDEXOF //
-Array.prototype.myIndexOf = function (searchElement) {
-  // Place your code here.
+Array.prototype.myIndexOf = function (value, index) {
+  if (index == undefined || index == NaN) {
+    index = 0;
+}
+
+  for (let i = index; i < this.length; i++) {
+    if (this[i] == value) {
+      return i;
+    }
+  }
+
+  return -1;
 };
 
 // LASTINDEXOF //
-Array.prototype.myLastIndexOf = function (searchElement) {
-  // Place your code here.
-};
+Array.prototype.myLastIndexOf = function (value, index) {
+  if (index == undefined || index == NaN) {
+    index = this.length;
+}
 
+  if (index < 0) {
+    index += this.length;
+  }
+
+  for (let i = index; i >= 0; i--) {
+    if (this[i] == value) {
+      return i;
+    }
+  }
+
+  return -1;
+};
+//the following section implemented by Kasaf Shah
 // KEYS //
 Object.myKeys = function (object) {
   let keys=[]; 
@@ -79,6 +143,7 @@ Object.myValues = function (object) {
   let i=0; 
   for(let value in object){
     values[i] = object[value]; 
+    i++; 
   }
   return values; 
   
