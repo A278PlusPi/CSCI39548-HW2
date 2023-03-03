@@ -9,7 +9,6 @@ In this Assignment, we use the prototype constructor to add new methods to the A
 ----------------------------------------------------------*/
 
 // MAP //
-Array.prototype.myMap = function (callbackFn) {};
 Array.prototype.myMap = function (callbackFn) {
   let mapped = [];
   for (let i = 0; i < this.length; i++) {
@@ -43,7 +42,7 @@ Array.prototype.mySome = function (callbackFn) {
 // EVERY //
 Array.prototype.myEvery = function (callbackFn) {
   for (let i = 0; i < this.length; i++){
-    if (this[i] == undefined){
+    if (this[i] === undefined){
       continue; //go to next iteratation if value is undefined
     }
     if (callbackFn(this[i], i, this) === false){
