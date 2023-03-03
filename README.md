@@ -1,3 +1,11 @@
+# Contributors
+<ul>
+  <li>[Anthony John Regner <i>(A278PlusPi)</i>](https://github.com/A278PlusPi) Worked on functions 6, 7, 8</li>
+  <li>[Hazel Pham <i>(hazelhpham)</i>](https://github.com/hazelhpham/) Worked on functions 1, 2, 3</li>
+  <li>[Kasaf Shah <i>(shahks-hub)</i>](https://github.com/shahks-hub/) Worked on functions 9 and 10</li>
+  <li>[Rhoenz Fermin <i>(rhoenz-fe)</i>](https://github.com/rhoenz-fe/) Worked on functions 4 and 5</li>
+</ul>
+
 # javascript-methods-starter-template-code
 This repository is the starter code for Assignment 2 - JavaScript Methods. 
 
